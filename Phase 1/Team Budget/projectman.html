@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="budget.js"></script>
+    <title>Project Manager</title>
+    <style type="text/css">
+        div{
+            text-align: center;
+            border:2px black solid;
+            width: 300px;
+            height: 250px;
+            display: inline-block;
+            padding: 30px;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div><h2>Add A New Budget</h2>
+        <form>
+            <label for="client">Client Name:</label><br>
+            <input type="text" id="client" name="client"><br>
+            <label for="proj">Project Name:</label><br>
+            <input type="text" id="proj" name="proj"><br>
+            <label for="Budget">Budget:</label><br>
+            <input type="text" id="budget" name="budget"><br><br>
+            <input type="button" value="Submit" onclick="storeData()">
+            <input type="reset" value="Clear">
+        </form>
+        <a href="homepage.html">Back</a>
+    </div>
+
+    
+
+</body>
+</html>
