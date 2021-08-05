@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="addblog.js"></script>
+    <title>Simply Blogging</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">   
+    <style>
+        .heading{
+            text-align: center;
+        }
+        .container {
+            border: black solid 4px;
+        }
+        .blogpost {
+            border: black solid 1px;
+        }
+        .blog-container {display:inline-block;}
+        
+    </style>
+</head>
+<body>
+    <h2 class="heading">Simply Blogging</h2></br></h2>
+    <div class="row">
+        <div class="col"><h4><a href="">Add Blog</a></h4></div>
+        <div class="col"><h4><a href="">Home</a></h4></div>
+        <div class="col"><h4><a href="">About Us</a></h4></div>
+        <div class="col"><h4><a href="">Contact</a></h4></div> </div> <br>
+    </div>
+
+    <div class="container">
+        
+        <form>
+            <label for="title">Title:</label>
+            <input type="text" id="title" class="form-control" required/>
+            <br/>
+            <label for="content">Article Content:</label>
+            <input type="text" id="content" class="form-control" required/>
+            <br/>
+            <label for = url>Image URL:</label>
+            <input type="text" id="link" class="form-control" required />
+            <br/>
+            <input type="submit" value="submit" class="btn btn-primary" onclick="addPost()">
+        </form>
+    </div>
+
+
+    <div class = "blogpost" id="main">
+        
+    <body onload="displayPost()"></body>
+    </div>
+
+</body>
+
+</html>
