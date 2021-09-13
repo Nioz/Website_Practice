@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatlog</title>
+    <!-- connecting library file part of node_module folder -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io();
+        socket.on("confirm",(msg)=> {
+            console.log("Post received");
+            document.getElementById("main").innerHTML="Post sent successfully";
+        })
+        sendData = () => {
+            let dd = document.getElementById("title").value;
+            let ee = document.getElementById("message").value;
+            socket.emit("title", dd);
+            socket.emit("message", ee);
+            document.getElementById("title").value = "";
+            document.getElementById("message").value = "";
+        }
+    </script>
+</head>
+<body>
+    <h2>Socket.io mongo chatlog</h2>
+
+    Title :<br><input type="text" id="title"/><br/>
+    Message :<br><textarea id="message" rows="4" cols="50"></textarea><br/>
+    <input type="button" value="Send" onclick="sendData()"/>
+    <hr>
+    <div id="main">
+
+    </div>
+</body>
+</html>

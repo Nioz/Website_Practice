@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Chat App</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io();
+        socket.on("",(msg)=> {
+            console.log(msg);
+            document.getElementById("main").innerHTML="SERVER MESSAGE:\n"+msg;
+        })
+        sendData = () => {
+            let dd = document.getElementById("name").value;
+            let ee = document.getElementById("message").value;
+            socket.emit("name", dd);
+            socket.emit("message", ee);
+            document.getElementById("name").value = "";
+            document.getElementById("message").value = "";
+        }
+    </script>
+</head>
+<body>
+    <h2>Socket.io Chat</h2>
+
+    Name:<br><input type="text" id="name"/><br/>
+    Message:<br><textarea id="message" rows="4" cols="50"></textarea><br/>
+    <input type="button" value="Send" onclick="sendData()"/>
+    <hr>
+    <div id="main">
+
+    </div>
+</body>
+</html>
